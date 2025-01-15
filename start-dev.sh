@@ -9,4 +9,5 @@ else
 fi
 
 echo 'uruchamianie skryptu..'
+open "http://localhost:8000"
 uvicorn main:app --reload
