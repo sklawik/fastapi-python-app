@@ -1,11 +1,12 @@
 #!/bin/bash
-python3 -c "import fastapi"
+python3 -c "import fastapi uvicorn"
 if [ $? -eq 0 ]; then
     echo 'Znaleziono FastAPI'
 else
-    echo 'Nie znaleziono FastAPI. Instalacja:'
+    echo 'Nie znaleziono FastAPI lub uvicorn. Instalacja:'
     pipx install fastapi
+    pipx install uvicorn
 fi
 
 echo 'uruchamianie skryptu..'
-python3 ./main.py
+uvicorn main:app
