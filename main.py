@@ -3,18 +3,20 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-
-class LinkedList:
-    def __init__(self):
-        print("class init")
-    
-
 class Node:
     value: int
     parent: Node
     children: Node
     def __init__(value):
         
+
+class LinkedList:
+    rootNode: Node
+    def __init__(self):
+        print("class init")
+    
+
+
         
 
 htmlFile=""
