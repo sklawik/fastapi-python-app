@@ -4,6 +4,19 @@ from fastapi.responses import HTMLResponse
 app = FastAPI()
 
 
+class LinkedList:
+    def __init__(self):
+        print("class init")
+    
+
+class Node:
+    value: int
+    parent: Node
+    children: Node
+    def __init__(value):
+        
+        
+
 htmlFile=""
 
 with open("./main.html", 'r') as file:
