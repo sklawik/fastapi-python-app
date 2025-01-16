@@ -38,25 +38,25 @@ class BST:
         return self.search(currentNode.left, _value) or self.search(currentNode.right, _value)
             
             
-    def printTree(self, node):
+    def print_tree(self, node):
         if node:
-            self.printTree(node.left)
+            self.print_tree(node.left)
             print(node.value)
-            self.printTree(node.right)
+            self.print_tree(node.right)
             
 
-    def minValue(self, currentNode: Node)->Node:
+    def min_value(self, currentNode: Node)->Node:
         if currentNode == None:
             currentNode = self.rootNode
         if currentNode.left is not None:
-            return self.minValue(currentNode.left)
+            return self.min_value(currentNode.left)
         else:
             return currentNode
-    def maxValue(self, currentNode: Node)->Node:
+    def max_value(self, currentNode: Node)->Node:
         if currentNode == None:
             currentNode = self.rootNode
         if currentNode.right is not None:
-            return self.maxValue(currentNode.right)
+            return self.max_value(currentNode.right)
         else:
             return currentNode
      
@@ -73,7 +73,7 @@ class BST:
             elif root.right is None:
                 return root.left
 
-            min_value_node = self.minValue(root.right)
+            min_value_node = self.min_value(root.right)
             root.value = min_value_node.value  
 
             root.right = self.delete(root.right, min_value_node.value)
@@ -93,13 +93,13 @@ tree.insert(300)
 print(tree.search( tree.rootNode,4))
 # czy istnieje -50 True
 print(tree.search( tree.rootNode,-50))
-tree.printTree(tree.rootNode)
+tree.print_tree(tree.rootNode)
         
-print("najmniejsza wartosc: ",tree.minValue(tree.rootNode).value)
-print("najwieksza wartosc: ",tree.maxValue(tree.rootNode).value)
+print("najmniejsza wartosc: ",tree.min_value(tree.rootNode).value)
+print("najwieksza wartosc: ",tree.max_value(tree.rootNode).value)
 
 tree.delete(tree.rootNode, 300)
-tree.printTree(tree.rootNode)
+tree.print_tree(tree.rootNode)
 
 print("wartosc 300 zostalo usuniete")
 
