@@ -4,10 +4,10 @@ if [ $? -eq 0 ]; then
     echo 'Znaleziono FastAPI'
 else
     echo 'Nie znaleziono FastAPI lub uvicorn. Instalacja:'
-    pipx install fastapi
-    pipx install uvicorn
+    pip3 install fastapi
+    pip3 install uvicorn
 fi
 
 echo 'uruchamianie skryptu..'
 open "http://localhost:8000"
-uvicorn main:app --reload
+python3 -m uvicorn main:app --reload
