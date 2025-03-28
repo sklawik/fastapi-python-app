@@ -11,11 +11,22 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
+todos = [
+        {"id": "1",
+         "title": "Welcome to FastAPI!",
+         "description":"Test"}
+     ]
 
 
 @app.get("/todos")
 async def root():
-     return [
-        {"title": "Welcome to FastAPI!",
-         "description":"Test"}
-     ]
+    global todos
+    return todos
+     
+     
+@app.delete("/todos")
+async def delete_todo(id: str):
+    global todos
+    todos = [todo for todo in todos if todo["id"] != id]
+    return {"message": f"Todo deleted"}
+    
