@@ -28,5 +28,5 @@ async def root():
 async def delete_todo(id: str):
     global todos
     todos = [todo for todo in todos if todo["id"] != id]
-    return {"message": f"Todo deleted"}
+    return todos
     

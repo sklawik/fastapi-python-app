@@ -11,8 +11,9 @@ const toggleStatus = () => {
   emit("toggle");
 };
 
-const handleRemoveButtonClick=  ()=>{
-    
+const handleRemoveButtonClick=  async ()=>{
+    let res = await fetch("http://localhost:8000/todos", {method: 'DELETE', body: JSON.stringify({id: props.id})})
+    console.log(res)
 }
 
 </script>
