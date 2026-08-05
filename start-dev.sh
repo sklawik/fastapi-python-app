@@ -12,5 +12,5 @@ else
 fi
 
 echo 'uruchamianie skryptu..'
-open "http://localhost:8000"
-uvicorn main:app --reload
+open "http://0.0.0.0:8000"
+uvicorn main:app --host 0.0.0.0 --reload

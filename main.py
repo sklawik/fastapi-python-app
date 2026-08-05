@@ -103,7 +103,7 @@ tree.print_tree(tree.rootNode)
 
 print("wartosc 300 zostalo usuniete")
 
-# strona html serwowana domyślnie
+
 @app.get('/')
 async def root():
     with open("./main.html", 'r') as file:
