@@ -1,11 +1,14 @@
 #!/bin/bash
-python3 -c "import fastapi uvicorn"
+source .venv/bin/activate
+python3 -c "import fastapi; import uvicorn"
 if [ $? -eq 0 ]; then
     echo 'Znaleziono FastAPI'
 else
     echo 'Nie znaleziono FastAPI lub uvicorn. Instalacja:'
-    pipx install fastapi
-    pipx install uvicorn
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install fastapi
+    pip install uvicorn
 fi
 
 echo 'uruchamianie skryptu..'
