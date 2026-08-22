@@ -110,7 +110,7 @@ async def root():
         htmlFile = file.read()
     return HTMLResponse(content=htmlFile)
 
-items = []
+items = ["apple", "banana", "orange"]
 
 @app.get("/items")
 def create_item(item: str):
