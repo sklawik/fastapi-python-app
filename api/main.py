@@ -29,4 +29,9 @@ async def delete_todo(id: str):
     global todos
     todos = [todo for todo in todos if todo["id"] != id]
     return todos
-    
+
+@app.post("/todos")
+async def create_todo(todo: dict):
+    global todos
+    todos.append(todo)
+    return todos
